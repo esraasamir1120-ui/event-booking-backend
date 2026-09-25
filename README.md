@@ -60,6 +60,9 @@ server/
 ├── utils/
 │   └── email.js
 │
+├── postman/
+│   └── Events API.postman_collection.json
+│
 ├── index.js
 ├── dbseeds.js
 ├── package.json
@@ -84,9 +87,9 @@ server/
 |---|---|---|
 | GET | `/api/events` | Get all events |
 | GET | `/api/events/:id` | Get an event by ID |
-| POST | `/api/events` | Create an event *(Admin)* |
-| PUT | `/api/events/:id` | Update an event *(Admin)* |
-| DELETE | `/api/events/:id` | Delete an event *(Admin)* |
+| POST | `/api/events` | Create an event (Admin) |
+| PUT | `/api/events/:id` | Update an event (Admin) |
+| DELETE | `/api/events/:id` | Delete an event (Admin) |
 
 Events can also be filtered using query parameters:
 
@@ -102,7 +105,7 @@ GET /api/events?location=Tech%20Hub
 | POST | `/api/bookings/send-otp` | Send booking OTP |
 | POST | `/api/bookings` | Create a booking |
 | GET | `/api/bookings/my` | Get the current user's bookings |
-| PUT | `/api/bookings/:id/confirm` | Confirm a booking *(Admin)* |
+| PUT | `/api/bookings/:id/confirm` | Confirm a booking (Admin) |
 | DELETE | `/api/bookings/:id` | Cancel a booking |
 
 ## Authentication
@@ -115,7 +118,7 @@ Add the token to the request headers:
 Authorization: Bearer <your_token>
 ```
 
-The API uses role-based authorization for admin-only operations such as creating, updating, deleting events, and confirming bookings.
+The API uses role-based authorization for admin-only operations such as creating, updating, and deleting events, and confirming bookings.
 
 ## Booking Flow
 
@@ -130,6 +133,12 @@ The booking process works as follows:
 7. The user can view their bookings.
 8. The user can cancel a booking.
 9. If a confirmed booking is cancelled, the available seat is returned to the event.
+
+## Postman Collection
+
+A Postman collection is included in the `postman` folder for testing the API endpoints.
+
+Import `Events API.postman_collection.json` into Postman and make sure the server is running before sending requests.
 
 ## Environment Variables
 
@@ -209,4 +218,4 @@ The tested functionality includes:
 
 **Esraa Samir**
 
-GitHub: https://github.com/esraasamir1120-ui
+GitHub: [esraasamir1120-ui](https://github.com/esraasamir1120-ui)
